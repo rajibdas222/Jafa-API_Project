@@ -1,0 +1,690 @@
+.compare_table{
+	/*border-collapse: separate;*/
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-spacing: 0px;
+}
+
+/*Ner Version Design*/
+body{
+	background-color: #EBF3F6 !important;
+}
+
+.compare_table td, .compare_table th { border: solid 1px #00A0E8; }
+.compare_table tr:second-child td:second-child { border-top-left-radius: 10px; }
+.compare_table tr:second-child td:last-child { border-top-right-radius: 10px; }
+.compare_table tr:second-child td:second-child { border-bottom-left-radius: 10px; }
+.compare_table tr:last-child td:last-child { border-bottom-right-radius: 10px; }
+.profite_tabel_btn{
+			width: 125px;
+		}
+		.compare_table td{
+			padding: 5px;
+			font-size: 26px;
+		}
+		.compare_table td a{
+			font-size: 30px;
+		}
+		.point_table td{
+			font-size: 26px;
+		}
+		.point_table th{
+			font-size: 20px;
+		}
+		.main_border{
+			border: 2px solid blue;
+			border-radius: 10px;
+			padding: 30px;
+			margin-bottom: 10px;
+			background-color: #CBEBF6;
+		}
+		.table-bordered th, .table-bordered td{
+			border: 1px solid #00A0E8;
+		}
+		.btn-success{
+			background-color: #FFF0E4;
+			color: black;
+		}
+		.btn_link{
+			background-color: #5dbee9;
+			color: white;
+		}
+		.form-control-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-prepend > .input-group-text, .input-group-lg > .input-group-append > .input-group-text, .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-append > .btn{
+				padding: 0.5rem 1rem;
+				border-color: #FFF0E4;
+			    font-size: 1.25rem;
+			    line-height: 1.5;
+			    border-radius: 0;
+		}
+		.input_fields{
+			margin-left: 100px;
+		}
+		.play_scaner{
+	    	font-size: 20px;
+	    	margin-bottom: 5px;
+	    	/*display: none;*/
+	    	/*width: 350px;
+	    	float: left;*/
+	    }
+	    .affiliate_list{
+	    	padding-left: 115px;
+	    }
+	    .account_profile{
+	    	font-size: 26px;
+	    }
+	    .app-title{
+	    	font-size: 30px;
+	    	color: blue;
+	    }
+	    .container-fluid{
+	    	margin-top: 20px; 
+	    }
+	    .heading2-box{
+	    	font-size: 18px;
+		    border: none;
+		    padding: 10px;
+		    border-radius: 4px;
+		    border:1px solid #B5E4F9;
+		    background-color: white;
+		    margin-bottom: 10px;
+	    }
+	    .second-box{
+	    	border: 2px solid blue;
+	    	border-radius: 10px; 
+	    	margin: 0px; 
+	    	padding: 10px;
+	    	margin-bottom: 10px;
+	    }
+	    .barcod_input_left{
+	    	border-top-left-radius: 10px; 
+	    	border-bottom-left-radius: 10px;
+	    }
+	    .barcod_input_middle{
+	    	margin-left: -5px;
+	    }
+	    .barcod_input_right{
+	    	border-top-right-radius: 10px; 
+	    	border-bottom-right-radius: 10px; 
+	    	border-top-left-radius: 10px; 
+	    	border-bottom-left-radius: 10px; 
+	    	margin-left: -5px;
+	    	width: 500px;
+	    }
+	    .screen_message{
+	    	position: fixed; 
+	    	right: 30px; 
+	    	bottom: 10px; 
+	    	padding: 4px; 
+	    	background: #FFFF99;
+	    	font-size: 22px;
+	    }
+	    .customer_point_table{
+	    	position: fixed; right: 10px; top: 40px; padding: 4px; background: #DBEEF4;
+	    }
+	    .compare_table_padding{
+	    	display: none;
+	    }
+	    .android_screen{
+	    	display: none;
+	    }
+	    .mobile_show{
+			display: none;
+		}
+		.product_image{
+			
+			/*z-index: 100;*/
+		}
+		.product_image_parent{
+			padding: 5px; 
+			border: 1px solid #eee;
+			background: #FBE8F9;
+			margin-bottom: -50px;
+			z-index: 100;
+		}
+		.product_image_design{
+			max-height: 280px;
+			min-height: 160px;
+			max-width: 340px;
+		}
+		.point_table_aria table tr th{
+			font-size: 30px;
+			padding: 20px 30px;
+
+		}
+		.new_member_registration_screen{
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 550px;
+		}
+		.customer_login_screen {
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 530px;
+		}
+
+		.registration_alert {
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 530px;
+		}
+
+		.sent_password_reset_link_sent_screen{
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 430px;
+		}
+
+		.forgot_password_screen {
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 470px;
+		}
+		.change_password_screen {
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 530px;
+		}
+		.voice_suggestion_screen {
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 530px;
+		}
+		.recording-instructions ul{
+			padding: 0;
+		}
+		.recording-instructions li{
+			list-style: none;
+			border-bottom: 1px solid #eee;
+			padding: 5px 10px;
+
+		}
+		.recording-instructions{
+			max-height: 600px;
+			overflow: auto;
+			padding: 0;
+		}
+		.microphone_btn_mobile{
+	    	display: none;
+	    }
+
+	    .dubble_point_btn{
+	    	color: blue;
+	    	cursor: pointer;
+	    	text-decoration: underline;
+	    }
+
+	    .dubble_point_btn:hover{
+	    	background-color: #FFF0E4;
+	    }
+	    .search_scroll_btn{
+	    	font-size: 26px; 
+	    	padding: 15px; 
+	    	background-color: #0000FF;
+	    	/*width: 350px;
+	    	height: 100px;*/
+    	   /* background: url('../img/1st button.png');
+    	    background-repeat: no-repeat;
+	    	background-size:100%;
+    	    font-weight: bold;
+    	    font-size: 24px;
+    	    color: white;
+    	    padding-top: 0px;
+    	    padding-bottom: 0px;
+    	    text-align: left;*/
+	    }
+	    /*.search_scroll_btn{
+	    	background:#F7CC9F; 
+	    	font-weight: bold; 
+	    	font-size: 28px;
+	    }*/
+	    .home_page_button{
+	    	font-size: 24px; 
+	    	width: 100%; 
+	    	height: 62px;
+	    	/*background-color: #F7C3C7;*/
+	    	color: white !important;
+	    	margin-bottom: 5px;
+	    	background: url('../img/Recording.flac2.png');
+	    	background-size: 100%;
+	    	background-repeat: no-repeat;
+	    	width: 220px;
+
+	    }
+	    .jafa_btn{
+			/*background-color: #F7C3C7;*/
+			background-color: #1862b3;
+			color: white;
+		}
+		 .btn_aria_mobile{
+	    	display: none;
+	    }
+	    .nav .nav-item{
+	    	margin-right: 10px;
+	    	color: white;
+	    }
+
+	    .play_scaner{
+	    	/*color: white;
+	    	height: 90px;
+	    	font-size: 30px;
+	    	font-weight: bold;
+	    	background: url('../img/ber_code_bg.png');
+	    	background-size: 100%; 
+	    	background-repeat: no-repeat;*/
+	    	font-style: italic;
+	    }
+	    .play_scaner.btn:focus, .btn.focus {
+	        outline: 0px;
+	        box-shadow: none;
+	    }
+	    .microphone_btn{
+	    	/*height: 95px;*/
+	    	/*width: 280px;*/
+	    	font-weight: bold;
+	    	font-style: italic;
+	    	text-align: left;
+	    	/*background: url('../img/AI.png');*/
+	    	background-size: 100%; 
+	    	background-repeat: no-repeat;
+	    	/*color: white;
+	    	margin: 5px 0; 
+	    	font-size: 26px;
+	    	font-style: italic;
+	    	margin-top: -25px;
+	    	text-align: left;*/
+	    }
+		@media only screen and (max-width: 768px) {
+			/*.barcod_input_right{
+				z-index: 1500;
+			}*/
+			.voice_suggestion_screen{
+				display: none !important;
+			}
+			.product_image{
+				
+				z-index: 0;
+			}
+			#jan_product_name2{
+				font-size: 22px;
+				font-weight: bold;
+			}
+			.product_image_parent{
+				padding: 5px; 
+				border: 1px solid #eee;
+				margin-bottom: 10px;
+				z-index: 0;
+			}
+		    .input_fields{
+		    	margin-left: 0;
+		    }
+		    .play_scaner{
+		    	font-size: 22px;
+		    }
+		    .affiliate_list{
+		    	padding-left: 0;
+		    }
+		    #point_table_btn{
+		    	margin-top: 10px;
+		    	float: left;
+		    }
+		    .account_profile{
+		    	font-size: 18px;
+		    	margin-top: -7px;
+		    	background-color: white;
+		    	padding: 10px;
+		    }
+		    .app-title{
+		    	font-size: 32px;
+		    	text-align: center;
+		    	margin-top: 10px;
+		    	color: white;
+		    	background-color: blue;
+		    	margin-bottom: 10px;
+		    }
+		    .main_border{
+		    	padding: 5px;
+		    	/*border: 1px solid red;*/
+		    	border: none;
+		    	border-radius: 5px;
+		    	margin: 0;
+		    }
+		    .heading2-box{
+		    	font-size: 14px;
+			    border: none;
+			    padding: 10px;
+			    /*font-weight: bold;*/
+			    border-radius: 4px;
+			    border:1px solid #B5E4F9;
+			    background-color: white;
+			    margin-bottom: 10px;
+		    }
+		    .container-fluid{
+		    	margin-top: 5px; 
+		    	padding-right: 5px;
+		    	padding-left: 5px;
+		    }
+		    .second-box{
+		    	/*border: 1px solid red;*/
+		    	border: none;
+		    	border-radius: 5px; 
+		    	margin: 5px 0; 
+		    	padding: 5px;
+		    }
+		    .pdding-zero{
+		    	padding: 0px;
+		    }
+
+		    .barcod_input_left{
+		    	border-top-left-radius: 10px; 
+		    	border-bottom-left-radius: 10px;
+		    	border-top-right-radius: 10px; 
+		    	border-bottom-right-radius: 10px; 
+		    	width: 100%;
+		    	margin-bottom: 5px;
+		    }
+		    .barcod_input_middle{
+		    	border-top-left-radius: 10px; 
+		    	border-bottom-left-radius: 10px;
+		    	border-top-right-radius: 10px; 
+		    	border-bottom-right-radius: 10px; 
+		    	width: 100%;
+		    	margin: 0;
+		    	margin-bottom: 5px;
+		    }
+		    .barcod_input_right{
+		    	border-top-left-radius: 10px; 
+		    	border-bottom-left-radius: 10px;
+		    	border-top-right-radius: 10px; 
+		    	border-bottom-right-radius: 10px; 
+		    	width: 100%;
+		    	margin: 0;
+		    	margin-bottom: 5px;
+		    }
+		    .screen_message{
+		    	position: fixed; 
+		    	right: 5px; 
+		    	left: 5px;
+		    	bottom: 10px; 
+		    	padding: 4px; 
+		    	background: #FFFF99;
+		    	font-size: 14px;
+		    }
+		    .screen_message .card-body{
+		    	padding: 10px;
+		    }
+		    .customer_point_table{
+		    	position: fixed; 
+		    	right: 10px; 
+		    	/*left: 5px;*/
+		    	top: 40px; 
+		    	padding: 4px; 
+		    	background: #DBEEF4;
+		    	font-size: 18px;
+		    }
+		    .customer_point_table .card-body{
+		    	padding: 10px;
+		    }
+		    .customer_point_table h3{
+		    	font-size: 22px;
+		    }
+		    .point_table th, .point_table td{
+		    	font-size: 14px;
+		    }
+		    .compare_table_mobile tbody th, .compare_table_mobile tbody td{
+		    	vertical-align: middle;
+		    	padding: 2px;
+		    }
+		    .compare_table{
+		    	display: none;
+		    }
+		    .compare_table_padding{
+		    	display: block;
+		    }
+		    .product_image_not_show{
+		    	display: none;
+		    }
+		    .android_screen{
+		    	display: block;
+		    }
+		    .introduce_screen{
+		    	width: 100%;
+		    	height: 100%;
+		    }
+		    .mobile_show{
+		    	display: block;
+		    }
+		    .point_table_aria table tr th{
+		    	font-size: 18px;
+		    	padding: 10px 15px;
+
+		    }
+		    .new_member_registration_screen{
+		    	right: 0px; bottom: 5px; 
+		    	z-index: 1000;
+		    }
+		    .customer_login_screen {
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    }
+
+		    .registration_alert {
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    }
+		    .forgot_password_screen{
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    }
+		    .sent_password_reset_link_sent_screen{
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    }
+		    .change_password_screen {
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    }
+		    .voice_suggestion_screen {
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    	height: 75%;
+		    }
+		    .product_image_design{
+		    	max-height: 180px;
+		    	min-height: 120px
+		    }
+
+		    .recording-instructions{
+		    	max-height: 500px;
+		    	overflow: auto;
+		    }
+		    .microphone_btn{
+		    	display: none;
+		    	margin-bottom: 5px;
+		    	width: 100%;
+		    }
+
+		    .microphone_btn_mobile{
+		    	display: block;
+		    	/*height: 95px;*/
+		    	font-weight: bold;
+		    	/*background: url('../img/AI.png');*/
+		    	background-size: 100%; 
+		    	background-repeat: no-repeat;
+		    	color: white;
+		    	margin: 5px 0; 
+		    	font-size: 26px;
+		    	font-style: italic;
+		    	margin-top: -25px;
+		    	text-align: left;
+		    }
+
+	        .vidio_aria video { 
+	    		border: 3px solid gray; 
+	    		position: relative; 
+	    		width: 320px !important;
+	    	}
+
+		    .scanning_video_box{
+		    	/*border: 2px red solid; */
+		    	margin-top: 5% !important; 
+		    	/*margin-top: 15%; */
+		    	margin-left: 5% !important;
+		    	height: 210px !important;
+		    	width: 290px !important; position: absolute; z-index: 2000;
+		    	/*border: 2px red solid; 
+		    	margin-top: 30%; 
+		    	margin-left: 10%;
+		    	height: 100px;
+		    	width: 80%; 
+		    	position: absolute; 
+		    	z-index: 2000;*/
+		    }
+
+		    .qrcode_pc{
+		    	display: none;
+		    }
+		    .dubble_point_btn{
+		    	font-size: 1.1rem;
+		    	color: blue;
+		    	cursor: pointer;
+		    	text-decoration: underline;
+		    }
+		    .dubble_pont_btn{
+		    	width: 48%
+		    }
+		    .search_scroll_btn{
+		    	width: 100%;
+		    	margin-bottom: 5px;
+		    	/*height: 70px;*/
+	    	    /*background: url('../img/1st button.png');*/
+	    	    background-repeat: no-repeat;
+		    	background-size:100%;
+	    	    font-weight: bold;
+	    	    font-size: 24px;
+	    	    color: white;
+	    	    /*padding-top: 0px;*/
+	    	    /*padding-bottom: 0px;*/
+	    	    text-align: left;
+		    }
+
+		    .desktop_show{
+		    	display: none;
+		    	font-weight: bold;
+		    	margin-top: 30px;
+		    }
+
+		    /*Ner Version Design*/
+		    body{
+		    	background-color: white !important;
+		    }
+		    .home_page_button{
+		    	font-size: 12px; 
+		    	width: 32%;
+		    	height: 33px; 	
+		    	color: white !important;
+		    	font-weight: bold;
+		    	background: url('../img/Recording.flac.png');
+		    	background-size: 100%; 
+		    	border: 1px solid white;
+		    	border-radius: 10px;
+		    	background-repeat: no-repeat;
+		    	padding: 5px 2px;
+		    }
+		    .btn-sparate{
+		    	display: block;
+	    	    clear: both;
+	    	    content: "";
+		    	/*clear: both !important;*/
+		    }
+		    .play_scaner{
+		    	margin-bottom: 35px;
+
+		    	/*background-color: red;
+		    	color: yellow;
+		    	height: 95px;
+		    	font-weight: bold;
+		    	background: url('../img/ber_code_bg.png');
+		    	background-size: 100%; 
+		    	background-repeat: no-repeat;
+		    	font-style: italic;*/
+		    	/*border: 1px solid red;*/
+		    }
+		    .play_scaner p{
+		    	font-size: 30px;
+		    	/*margin-bottom: 2px;*/
+	    	    /* font-size: 22px; */
+	    	    /*margin-top: -35px;
+	    	    color: white;
+	    	    text-align: left;
+	    	    font-size: 33px;
+	    	    font-style: italic !important;*/
+		    }
+		    .play_scaner img{
+		    	/*display: none;*/
+		    }
+
+		    .jafa_btn{
+		    	/*color: yellow;*/
+		    	/*background-color: red !important;*/
+		    }
+
+		    .btn_aria_mobile{
+		    	background-color: white;
+		    	padding-top: 10px;
+		    	/*margin:0px 10px;*/
+		    	display: block;
+		    }
+		    .site_link_qrcode{
+		    	width: 100%;
+		    	background: url('../img/QR code.png');
+		    	background-size: 100%; 
+		    	background-repeat: no-repeat;
+		    	vertical-align: middle;
+		    	font-style: italic !important;
+		    }
+
+		    .site_link_qrcode span{
+		    	font-size: 26px;
+		    	float: left;
+		    	color: white;
+		    	margin-top: 5px;
+		    	font-style: italic !important;
+			}			
+			.exit_modal {
+				position:fixed;
+				top:auto;
+				right:auto;
+				left:auto;
+				width: 100%;
+				bottom:0;
+			 }
+
+		}
+		.vidio_aria video { 
+			border: 3px solid gray; 
+			position: relative; 
+			width: 100%;
+		}
+	    .scanning_video_box{
+	    	border: 2px red solid; 
+	    	margin-top: 10%; 
+	    	margin-left: 10%;
+	    	height: 80%;
+	    	width: 80%; 
+	    	position: absolute; 
+	    	z-index: 2000;
+	    }
+
+	    .site_link_btn{
+	    	/*background: url('../img/Recording.flac.png');
+	    	background-size: 100%;*/
+	    }
+
+	   
+

@@ -1,0 +1,425 @@
+.compare_table{
+	border-collapse: separate;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-spacing: 0px;
+}
+.compare_table th{border: 1px solid #000;}
+.compare_table td { border: solid 1px #000; }
+.compare_table tr:second-child td:second-child { border-top-left-radius: 10px; }
+.compare_table tr:second-child td:last-child { border-top-right-radius: 10px; }
+.compare_table tr:second-child td:second-child { border-bottom-left-radius: 10px; }
+.compare_table tr:last-child td:last-child { border-bottom-right-radius: 10px; }
+.profite_tabel_btn{
+			width: 125px;
+		}
+		.compare_table td{
+			padding: 5px;
+			font-size: 26px;
+		}
+		.compare_table td a{
+			font-size: 30px;
+		}
+		.point_table td{
+			font-size: 26px;
+		}
+		.point_table th{
+			font-size: 20px;
+		}
+		.main_border{
+			border: 5px solid red;
+			border-radius: 30px;
+			padding: 30px;
+			margin-bottom: 10px;
+		}
+		.table-bordered th, .table-bordered td{
+			border: 1px solid black;
+		}
+		.btn-success{
+			background-color: #FFF0E4;
+			color: black;
+		}
+		.btn_link{
+			background-color: #FFF0E4;
+		}
+		.form-control-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-prepend > .input-group-text, .input-group-lg > .input-group-append > .input-group-text, .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-append > .btn{
+				padding: 0.5rem 1rem;
+				border-color: #FFF0E4;
+			    font-size: 1.25rem;
+			    line-height: 1.5;
+			    border-radius: 0;
+		}
+		.input_fields{
+			margin-left: 100px;
+		}
+		.play_scaner{
+	    	font-size: 20px;
+	    	margin-bottom: 5px;
+	    	/*display: none;*/
+	    	/*width: 350px;
+	    	float: left;*/
+	    }
+	    .affiliate_list{
+	    	padding-left: 115px;
+	    }
+	    .account_profile{
+	    	font-size: 26px;
+	    }
+	    .app-title{
+	    	font-size: 40px;
+	    }
+	    .container-fluid{
+	    	margin-top: 20px; 
+	    }
+	    .heading2-box{
+	    	font-size: 19px; 
+	    	border: 1px solid red; 
+	    	padding: 5px;
+	    }
+	    .second-box{
+	    	border: 5px solid red;
+	    	border-radius: 30px; 
+	    	margin: 10px; 
+	    	padding: 10px;
+	    }
+	    .barcod_input_left{
+	    	border-top-left-radius: 10px; 
+	    	border-bottom-left-radius: 10px;
+	    }
+	    .barcod_input_middle{
+	    	margin-left: -5px;
+	    }
+	    .barcod_input_right{
+	    	border-top-right-radius: 10px; 
+	    	border-bottom-right-radius: 10px; 
+	    	border-top-left-radius: 10px; 
+	    	border-bottom-left-radius: 10px; 
+	    	margin-left: -5px;
+	    	width: 500px;
+	    }
+	    .screen_message{
+	    	position: fixed; 
+	    	right: 30px; 
+	    	bottom: 10px; 
+	    	padding: 4px; 
+	    	background: #FFFF99;
+	    	font-size: 22px;
+	    }
+	    .customer_point_table{
+	    	position: fixed; right: 10px; top: 40px; padding: 4px; background: #DBEEF4;
+	    }
+	    .compare_table_padding{
+	    	display: none;
+	    }
+	    .android_screen{
+	    	display: none;
+	    }
+	    .mobile_show{
+			display: none;
+		}
+		.product_image{
+			
+			/*z-index: 100;*/
+		}
+		.product_image_parent{
+			padding: 5px; 
+			border: 1px solid #eee;
+			background: #FBE8F9;
+			margin-bottom: -60px;
+			z-index: 100;
+		}
+		.product_image_design{
+			max-height: 280px;
+			min-height: 160px;
+			max-width: 340px;
+		}
+		.point_table_aria table tr th{
+			font-size: 30px;
+			padding: 20px 30px;
+
+		}
+		.new_member_registration_screen{
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 550px;
+		}
+		.customer_login_screen {
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 530px;
+		}
+		.change_password_screen {
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 530px;
+		}
+		.voice_suggestion_screen {
+			right: 20px; bottom: 10px;
+			z-index: 1000;
+			width: 530px;
+		}
+		.recording-instructions ul{
+			padding: 0;
+		}
+		.recording-instructions li{
+			list-style: none;
+			border-bottom: 1px solid #eee;
+			padding: 5px 10px;
+
+		}
+		.recording-instructions{
+			max-height: 600px;
+			overflow: auto;
+			padding: 0;
+		}
+		.microphone_btn_mobile{
+	    	display: none;
+	    }
+
+	    .dubble_point_btn{
+	    	color: blue;
+	    	cursor: pointer;
+	    	text-decoration: underline;
+	    }
+
+	    .dubble_point_btn:hover{
+	    	background-color: #FFF0E4;
+	    }
+	    
+		@media only screen and (max-width: 768px) {
+			.product_image{
+				
+				z-index: 0;
+			}
+			
+			#jan_product_name2{
+				font-size: 26px;
+				font-weight: bold;
+			}
+			.product_image_parent{
+				padding: 5px; 
+				border: 1px solid #eee;
+				margin-bottom: 10px;
+				z-index: 0;
+			}
+		    .input_fields{
+		    	margin-left: 0;
+		    }
+		    .play_scaner{
+		    	font-size: 22px;
+		    }
+		    .affiliate_list{
+		    	padding-left: 0;
+		    }
+		    .point_table_btn{
+		    	margin-top: 10px;
+		    	float: left;
+		    }
+		    .account_profile{
+		    	font-size: 18px;
+		    }
+		    .app-title{
+		    	font-size: 24px;
+		    }
+		    .main_border{
+		    	padding: 5px;
+		    	border: 2px solid red;
+		    	border-radius: 5px;
+		    	margin-top: 10px;
+		    }
+		    .heading2-box{
+		    	font-size: 20px; 
+		    	border: none; 
+		    	padding: 0;
+		    	/*padding: 15px;*/
+		    }
+		    .container-fluid{
+		    	margin-top: 5px; 
+		    	padding-right: 5px;
+		    	padding-left: 5px;
+		    }
+		    .second-box{
+		    	border: 3px solid red;
+		    	border-radius: 5px; 
+		    	margin: 5px 0; 
+		    	padding: 5px;
+		    }
+		    .pdding-zero{
+		    	padding: 0px;
+		    }
+
+		    .barcod_input_left{
+		    	border-top-left-radius: 10px; 
+		    	border-bottom-left-radius: 10px;
+		    	border-top-right-radius: 10px; 
+		    	border-bottom-right-radius: 10px; 
+		    	width: 100%;
+		    	margin-bottom: 5px;
+		    }
+		    .barcod_input_middle{
+		    	border-top-left-radius: 10px; 
+		    	border-bottom-left-radius: 10px;
+		    	border-top-right-radius: 10px; 
+		    	border-bottom-right-radius: 10px; 
+		    	width: 100%;
+		    	margin: 0;
+		    	margin-bottom: 5px;
+		    }
+		    .barcod_input_right{
+		    	border-top-left-radius: 10px; 
+		    	border-bottom-left-radius: 10px;
+		    	border-top-right-radius: 10px; 
+		    	border-bottom-right-radius: 10px; 
+		    	width: 100%;
+		    	margin: 0;
+		    	margin-bottom: 5px;
+		    }
+		    .screen_message{
+		    	position: fixed; 
+		    	right: 5px; 
+		    	left: 5px;
+		    	bottom: 10px; 
+		    	padding: 4px; 
+		    	background: #FFFF99;
+		    	font-size: 14px;
+		    }
+		    .screen_message .card-body{
+		    	padding: 10px;
+		    }
+		    .customer_point_table{
+		    	position: fixed; 
+		    	right: 10px; 
+		    	/*left: 5px;*/
+		    	top: 40px; 
+		    	padding: 4px; 
+		    	background: #DBEEF4;
+		    	font-size: 18px;
+		    }
+		    .customer_point_table .card-body{
+		    	padding: 10px;
+		    }
+		    .customer_point_table h3{
+		    	font-size: 22px;
+		    }
+		    .point_table th, .point_table td{
+		    	font-size: 14px;
+		    }
+		    .compare_table_mobile tbody th, .compare_table_mobile tbody td{
+		    	vertical-align: middle;
+		    	padding: 2px;
+		    }
+		    .compare_table{
+		    	display: none;
+		    }
+		    .compare_table_padding{
+		    	display: block;
+		    }
+		    .product_image_not_show{
+		    	display: none;
+		    }
+		    .android_screen{
+		    	display: block;
+		    }
+		    .introduce_screen{
+		    	width: 100%;
+		    	height: 100%;
+		    }
+		    .mobile_show{
+		    	display: block;
+		    }
+		    .point_table_aria table tr th{
+		    	font-size: 18px;
+		    	padding: 10px 15px;
+
+		    }
+		    .new_member_registration_screen{
+		    	right: 0px; bottom: 5px; 
+		    	z-index: 1000;
+		    }
+		    .customer_login_screen {
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    }
+		    .change_password_screen {
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    }
+		    .voice_suggestion_screen {
+		    	right: 0px; bottom: 5px;
+		    	z-index: 1000;
+		    	width: 100%;
+		    }
+		    .product_image_design{
+		    	max-height: 180px;
+		    	min-height: 120px
+		    }
+
+		    .recording-instructions{
+		    	max-height: 500px;
+		    	overflow: auto;
+		    }
+		    .microphone_btn{
+		    	display: none;
+		    	margin-bottom: 5px;
+		    	width: 100%;
+		    }
+
+		    .microphone_btn_mobile{
+		    	display: block;
+		    }
+
+	        .vidio_aria video { 
+	    		border: 3px solid gray; 
+	    		position: relative; 
+	    		width: 320px !important;
+	    	}
+
+		    .scanning_video_box{
+		    	border: 2px red solid; 
+		    	margin-top: 45% !important; 
+		    	/*margin-top: 15%; */
+		    	margin-left: 5% !important;
+		    	height: 100px;
+		    	width: 290px !important; position: absolute; z-index: 2000;
+		    }
+
+		    .qrcode_pc{
+		    	display: none;
+		    }
+		    .dubble_point_btn{
+		    	font-size: 1.1rem;
+		    	color: blue;
+		    	cursor: pointer;
+		    	text-decoration: underline;
+		    }
+		    .dubble_pont_btn{
+		    	width: 48%
+		    }
+		    .search_scroll_btn{
+		    	width: 100%
+		    }
+		    .desktop_show{
+		    	display: none;
+		    	font-weight: bold;
+		    	margin-top: 30px;
+		    }
+		   
+
+		}
+		.vidio_aria video { 
+			border: 3px solid gray; 
+			position: relative; 
+			width: 100%;
+		}
+	    .scanning_video_box{
+	    	border: 2px red solid; 
+	    	margin-top: 30%; 
+	    	margin-left: 10%;
+	    	height: 100px;
+	    	width: 80%; 
+	    	position: absolute; 
+	    	z-index: 2000;
+	    }
+

@@ -1,0 +1,22 @@
+{
+  "short_name": "激安.com",
+  "name": "激安.com - 接続中",
+  "prefer_related_applications": true,
+  "icons": [
+    {
+      "src": "charin2_152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "charin2_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FFFFFF"
+}

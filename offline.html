@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- iPhone PWA icon and style -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#F7CC9F">
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <meta name="apple-mobile-web-app-title" content="ﾁｬﾘﾝ2 安値比較">
+	<!-- <meta name="theme-color" content="#EE6E73"> -->
+	<title>ﾁｬﾘﾝ2 安値比較</title>
+	<link rel="shortcut icon" href="favicon.png" />
+	<!-- Launcher Icon for Android and iPhone -->
+	<link rel="apple-touch-icon" size="152x152" href="resource/pwa/charin2_152.png">
+  	<link rel="icon" type="image/png" size="152x152" href="resource/pwa/charin2_152.png">
+  	<!-- Launcher Icon for Android and iPhone -->
+
+	<link rel="stylesheet" type="text/css" href="resource/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="resource/css/style_v2.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"> -->
+	<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<!-- CODELAB: Add link rel manifest -->
+	<!-- <link rel="manifest" id="manifest" href="<?php echo base_url().RES_DIR; ?>/pwa/manifest.json"> -->
+	<link rel="manifest" id="manifest" href="#">
+	<script type="text/javascript">
+		function trygoogle() {
+		// launch pic2shop and tell it to open Google Products with scan result
+			// window.location="pic2shop://scan?callback=http%3A//www.google.com/m/products%3Fgl%3Dus%26source%3Dmog%26hl%3Den%26source%3Dgp2%26q%3DEAN%26btnProductsHome%3DSearch%2BProducts";
+			// if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"pic2shop:"]]) {
+				var main_uri = encodeURI('https://jafa.dev.jacos.jp');
+				window.location="pic2shop://scan?callback="+main_uri+"%3Fgl%3Dus%26source%3Dmog%26hl%3Den%26source%3Dgp2%26q%3DEAN%26btnProductsHome%3DSearch%2BProducts";
+			// }else{
+			// 	window.location= 'https://play.google.com/store/apps/details?id=com.visionsmarts.pic2shop';
+			// }
+		}
+	</script>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PNLHDGG');</script>
+	<!-- End Google Tag Manager -->
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146142225-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-146142225-1');
+	</script>
+
+	<style type="text/css">
+		.btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active{
+			background-image: green;
+		}
+		.vedio_line{
+			border: 2px red solid; 
+			/*margin-top: 67%; */
+			margin-top: 30%; 
+			width: 320px; position: absolute; z-index: 2000;
+
+			/*animation: blink-animation 0.5s steps(5, start) infinite;*/
+			  /*-webkit-animation: blink-animation 0.5s steps(5, start) infinite;*/
+		}
+		
+		@keyframes blink-animation {
+		  to {
+		    visibility: hidden;
+		  }
+		}
+		@-webkit-keyframes blink-animation {
+		  to {
+		    visibility: hidden;
+		  }
+		}
+		/*.vidio_aria{
+			width:100%; 
+			text-align:center; 
+			border-bottom: 2px solid #cec5ba; 
+			line-height:0.1em; 
+			margin:37px 0 20px; 
+		}*/
+
+		/*.vidio_aria video { 
+			position:absolute; top:0;
+		  	left:50%;
+		  	margin-left:-125px;
+		}*/
+		.android_screen{
+			/*background-image: url("resource/img/install3.gif");*/
+			background-repeat: no-repeat;
+			/*background-size: 100% 100%;*/
+			width: 97%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+		.android_open_screen{
+			/*background-image: url("resource/img/open.jpeg");*/
+			background-repeat: no-repeat;
+			width: 97%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+		.android_camera_screen{
+			/*background-image: url("resource/img/camera.jpeg");*/
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			width: 97%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+
+		/*iPhone Screen*/
+		.iphone_browsing_screen{
+			/*background-image: url("resource/img/IMG-9229.JPG");
+			background-repeat: no-repeat;*/
+			background-size: 100% 100%;
+			width: 99%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+
+		.iphone_install_screen{
+			/*background-image: url("resource/img/IMG-9230.JPG");
+			background-repeat: no-repeat;*/
+			background-size: 100% 100%;
+			width: 99%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+		.iphone_open_screen{
+			/*background-image: url("resource/img/IMG-9231.JPG");
+			background-repeat: no-repeat;*/
+			background-size: 100% 100%;
+			width: 99%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+		.iphone_camera_screen{
+			/*background-image: url("resource/img/IMG-9232.JPG");
+			background-repeat: no-repeat;*/
+			background-size: 100% 100%;
+			width: 99%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+		.iphone_jafa_screen{
+			/*background-image: url("resource/img/IMG-9234.JPG");
+			background-repeat: no-repeat;*/
+			background-size: 100% 100%;
+			width: 99%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+		.iphone_last_screen{
+			/*background-image: url("resource/img/IMG-9235.JPG");
+			background-repeat: no-repeat;*/
+			background-size:99% 100%;
+			width: 99%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #f9def9;
+		}
+
+		.introduce_screen{
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+		}
+
+		/*the container must be positioned relative:*/
+		.autocomplete {
+		  position: relative;
+		  display: inline-block;
+		}
+
+		.autocomplete-items {
+		  position: absolute;
+		  border: 1px solid #d4d4d4;
+		  border-bottom: none;
+		  border-top: none;
+		  z-index: 99;
+		  top: 100%;
+		  left: 0;
+		  right: 0;
+		}
+
+		.autocomplete-items div {
+		  padding: 10px;
+		  cursor: pointer;
+		  background-color: #fff; 
+		  border-bottom: 1px solid #d4d4d4; 
+		}
+
+		/*when hovering an item:*/
+		.autocomplete-items div:hover {
+		  background-color: #e9e9e9; 
+		}
+
+		/*when navigating through the items using the arrow keys:*/
+		.autocomplete-active {
+		  background-color: DodgerBlue !important; 
+		  color: #ffffff; 
+		}
+		.barcode_reading_navi{
+			/*background-image: url("resource/img/IMG-9229.JPG");
+			background-repeat: no-repeat;*/
+			background-size: 100% 100%;
+			width: 99%;
+			height: 100%;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			padding: 4px;
+			border: 2px solid green;
+			background-color: #FFFF99;
+		}
+		
+		.introduce_screen .form-group{
+			margin-bottom: .5rem;
+		}
+
+		
+		.voice_product_list{
+			color: red;
+			padding: 5px;
+			border-bottom: 1px dotted gray;
+			cursor: pointer;
+		}
+		.voice_product_list:hover{
+			background-color: #CBEBF6;
+			/*font-weight: bold;*/
+		}
+		.ui-menu-item{
+			cursor: pointer; !important;
+		}
+		.ui-menu-item{
+			width: 100%;
+			padding: 5px;
+			background: none;
+		}
+		.ui-menu-item:hover{
+			background: #007bff;
+		}
+		.ui-menu-item a:hover{
+			background: transparent;
+			color: white;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNLHDGG"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4" style="padding: 10px;">
+				
+					
+				
+				<div class="float-right mobile_show" style="width: 75%; margin-right: 10px">
+					<img class="float-right" width="100%" height="100%" src="resource/img/jafa-logo2.png">
+					<br>
+					<p style="margin: 0; font-size: 12px;" class="text-right"><a href = "mailto: info_jafa@jacos.co.jp">メール：info_jafa@jacos.co.jp</a></p>
+				</div>
+				<!-- <a class="mobile_show" href="<?= base_url() ?>">
+					<img class="float-right" height="40" src="resource/img/jacos_logo-final.png">
+				</a> -->
+				
+			</div>
+
+			<div class="col-sm-8  ">
+				<ul class="nav float-right">
+				  <li class="nav-item">
+				   <button class="btn text-center home_page_button customer_reg_btn" id="customer_reg_btn" style="">新規登録</button>
+				  </li>
+				  <li class="nav-item">
+				    <button class="btn btn-default btn-lg text-center user_login_btn home_page_button" id="user_login_btn">ログイン</button>
+				  </li>
+				
+				  <li class="nav-item">
+				  	<button class="btn btn-default btn-lg text-center home_page_button introduce_btn" id="">紹介問い合わせ</button>
+				  </li>
+				</ul>
+				
+			</div>
+		</div>
+		<div class="">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row ">
+						<div class="col-sm-6 offset-3 app-title" style="background-color: #7DCFF7; margin-bottom: 10px; padding: 10px; border: 2px solid blue; border-radius: 4px;">
+							ダブルポイント案内
+							<button class="btn btn-lg search_scroll_btn float-right" style="padding: 0px;">
+								<p style="font-size:24px; margin-right: 55px; margin-top: -10px; padding: 10px 10px; text-align: left; color: white;" class="btn">消費税をぶっ飛ばそう!</p>
+							</button>
+							
+						</div>
+					</div>
+					<div class="row mobile_show">
+						<div class="col-sm-12">
+							<p class="app-title">ダブルポイント案内</p>
+						</div>
+						<div class="col-sm-12">
+							<a href="#" class="btn btn-lg search_scroll_btn">消費税をぶっ飛ばそう!</a>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-6 col-sm-12 offset-md-3">
+							<div class="heading2-box">
+								<div class="float-left" style="width: 4%">
+									①
+								</div>
+								<div class="float-left" style="width: 96%">
+									<p class="" style="">
+											ショップポイントに加え、当社ポイントを更に付加しますので、一層お得です。<br><span style="color: white; background-color: #e70c81">ダブルポイント</span> となり、割安で購入できますので、
+										    消費増税は  ふっ飛びます。<br>
+										<span style="color: white; background-color: #e70c81">ダブルポイント  (D.P)</span>  は Amazonギフトに 交換できます。
+									</p>
+								</div>
+								<div class="float-left" style="width: 4%">
+									② 
+								</div>
+								<div class="float-left" style="width: 96%">
+									<p class="" style="">
+										配送料の関係もあり、１つのサイトで連続して購入できます。<br>
+										それらには、すべて<span style="color: white; background-color: #e70c81">ダブルポイント(D.P)</span> が付与されます。
+									</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							
+						</div>
+						<div class="col-md-6">
+
+							<!-- <p class="pl-1">
+								このサイトで購入すると、<br>① ショップポイントに加え <br>
+								②当社ポイント、<span style="color: #ff8507; font-weight: bold;">チャリン<sup>2</sup></span> が付きますので、一層お得です。
+							</p>
+							<hr style="border-color:red;"> -->
+							<p class="heading2-box box_message_shadew">
+								<span class="" style="color: blue; font-weight: bold;">ショールーミング</span> <br>
+								家電やドラッグ、化粧品・・・などの店で、スマホ撮影して<!--  <br> -->
+								価格比較できます。
+							</p>
+							
+						</div>
+						<div class="col-md-3 " style="padding: 0">
+							<div class="row">
+								<div class="col-md-1">
+									
+								</div>
+								<div class="col-md-11">
+									<div class="col-md-12 float-right" style=" background-color: white; padding: 10px;">
+										
+											<img class="float-right" width="100%" src="resource/img/jafa-logo2.png">
+											<a class="float-right" style="font-size: 16px;" href = "mailto: info_jafa@jacos.co.jp">メール：info_jafa@jacos.co.jp</a>
+										
+									</div>
+								</div>
+							</div>
+							
+							<div class="clearfix"></div>
+								
+								<!-- <div class="row float-right" style="background-color: white;">
+									<a href = "mailto: info_jafa@jacos.co.jp">メール：info_jafa@jacos.co.jp</a>
+								</div> -->
+							<!-- </div> -->
+							
+						</div>	
+				</div>
+			</div>
+				<div class="col-sm-12 col-md-2 btn_aria_mobile">					
+					
+						<button class="btn btn-default btn-lg text-center home_page_button customer_reg_btn" id="customer_reg_btn" style="">新規登録</button>
+					<button class="btn btn-default btn-lg text-center user_login_btn home_page_button" id="user_login_btn">ログイン</button>
+					
+					<button class="btn btn-default btn-lg text-center home_page_button introduce_btn" id="" style="margin-right: 0;">紹介問い合わせ</button>
+					<!-- <span class="btn-sparate"></span> -->
+				</div>   
+			</div>
+			
+		</div>
+			<div class="row second-box" id="second-box" style="background-color: #CBEBF6;">
+				<div class="col-md-9 pdding-zero">
+					<!-- <form class="form-inline" action="false"> -->
+						<div class="row">
+							<div class="col-md-2 col-sm-12 ">
+								<legend class=""><strong style="font-size: 30px;">価格比較</strong></legend>
+							</div>
+							<div class="col-md-4 col-sm-12">
+								<button id="startButton" class="btn btn_link text-center btn-lg play_scaner col-sm-12 startButton" style="">
+									<p class="text-left">価格比較</p>
+									<!-- <img style="padding: 5px; width: 130px; height: 50px; margin-left: 5px; margin-top: -8px;" src="resources/img/barcode.png"></button> -->
+							</div>
+							<span class="float-right qrcode_pc">
+								
+								<img class="float-left" width="100" style="" src="resource/img/qrcode_pc.JPG">
+								<button style="margin: 10px; margin-top: 25px;" class="float-right btn btn-default btn-lg jafa_btn float-left"><i class="fa fa-arrow-left"></i> 紹介QRコード</button>
+								
+								
+							</span>
+							<div class="clearfix"></div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<button id="start-record-btn" style="" class="btn btn-default jafa_btn btn-lg microphone microphone_btn_mobile col-sm" type="button">
+									<span style="padding-left: 40px;">
+										<span class="microphone_icon"><i class="fa fa-microphone-alt"></i></span>
+										<span class="voice_search_text">AI音声検索</span>
+									</span>
+									
+									<!-- <span class="mobile_hide_countdown d-none" style="font-size: 26px; font-weight: bold;">2.0</span> -->
+								<p style="margin-top: -10px">
+									<small class="" style="font-size: 12px; text-align: left;"><span class="voice_small_text">※ボタンを押して商品名をお話しください</span>
+										<!-- <span class="mobile_hide_countdown float-left" style="font-size: 30px; font-weight: bold;">2.0</span> -->
+</small></p>
+								</button>
+							</div>
+							
+						</div>
+						
+						
+
+						<div class="form-group col-sm-12" style="margin-bottom: 5px; padding: 0;">
+							
+							<label class="float-left desktop_show" for="barcode" style="font-size: 22px; margin-right: 10px;">商品検索<br>最安値 </label>
+							
+											
+							
+
+							<div  style="padding: 0; border: 3px solid blue; border-radius: 4px;" class="input-group col-sm-6 barcod_input_right float-left">
+
+								<!-- <input type="text" style="" class="form-control-lg barcod_input_right" id="product_keyword3" value="" placeholder="商品名か？バーコード入力か？" name=""> -->
+							  <input type="text" id="product_keyword3" class="form-control" placeholder="商品名またはバーコード入力" aria-label="Recipient's username" value="" aria-describedby="basic-addon2">
+							  <div class="input-group-append" style="background-color: white;">
+
+							    <span class="input-group-text" id="clean_product_name" style="padding: 2px; color: #00A0E8; background-color: white; border-left: 2px solid white;"><i class="fa fa-window-close fa-3x"></i></span>
+							  </div>
+
+							</div>
+							<div class="mobile_show row" style="margin-bottom: 5px;">
+								<div class="clearfix"></div>
+								<div class="col-sm-12">
+									<button class="btn site_link_qrcode">
+										<span>紹介用ＱＲコード </span><img class="float-right" width="70" style="" src="resource/img/qrcode_pc.JPG">	
+									</button>
+								</div>
+								
+								<!-- <div style="border: 1px red solid; margin: 5px 15px;">
+									<div class="col-sm-8 float-left" style="width: 70%; padding-right: 0; padding-left: 5px;">
+										<label class=" mobile_show text-center" for="barcode" style="font-size: 25px; margin-top: 25px; font-weight: bold; color: blue;">紹介用ＱＲコード </label>
+									</div> 
+									<div class="col-sm-4 float-right" style="width: 30%; padding: 5px;">
+										<img width="80" style="" src="resource/img/qrcode_pc.JPG">									
+									</div>
+									<div class="clearfix"></div>
+								</div> -->							
+							</div>
+							<button id="start-record-btn" style="margin-left: 5px; font-size: 26px;" class="btn btn-default jafa_btn btn-lg microphone microphone_btn float-left" type="button" style=""><span class="microphone_icon"><i  class="fa fa-microphone-alt"></i></span> <span class="voice_search_text">AI音声検索</span> </button>
+							
+							<button style="margin-left: 5px; font-size: 26px;" class="btn btn-default btn-lg jafa_btn float-left" id="point_table_btn">ポイント残高</button>
+							
+							<button style="margin-left: 5px; font-size: 26px;" id="purchase_history" class="btn btn-default btn-lg jafa_btn float-left">履歴</button>
+							
+
+						</div>
+				</div>
+				<div class="col-md-3 text-center product_image_parent d-none">
+					<h5 class="search_result"></h5>
+					<div class="product_image" id="product_image">
+							
+					</div>
+								
+				</div>				
+				
+				<div class="col-md-12 affiliate_list table-responsive" id="affiliate_list" style="position: relative;">					
+					
+					<table class="table compare_table" style="background: white; font-size: 22px;">
+						<thead>
+							<tr>
+								<th colspan="5" style="padding: 0;">
+									<table class="table product_name_table" style="margin: 0; border: 1px solid #CBEBF6;">
+										<tbody style="margin: 0; padding: 0;">
+											<tr>
+												<td id="jan_product_name">
+													&nbsp
+												</td>
+											</tr>
+										</tbody>
+										
+									</table>
+								</th>
+								<th colspan="2" style="background-color: #CBEBF6; border-bottom: 1px solid #00A0E8; border-top: none; border-right: none; ">
+								</th>
+							</tr>
+
+						</thead>
+						<tbody id="comparing_table">
+							<tr>
+								<th style="width: 3%" class="align-middle text-center" nowrap>順位</th>
+								<th class="align-middle text-center" nowrap>ショップ名</th>
+								<th class="align-middle text-center" style="background-color: #CBEBF6; width: 3%;" nowrap>実質<br>価格</th>
+								<th style="width: 3%" class="align-middle text-center" nowrap>価格<br>(税込)</th>
+								<th class="align-middle text-center" style="width: 5%" nowrap>ショップ<br>ポイント</th>
+								<th nowrap class="align-middle text-center"  style="background-color: #CBEBF6; width: 5%;" nowrap>チャリン<sup>2</sup><br>ポイント<br>（D.P）</th>
+								
+								<th  style="width: 5%" class="align-middle text-center" nowrap>サイト</th>
+							</tr>
+							
+								<tr>
+									<td class="text-center" style="vertical-align: middle;">1位</td>
+									<td>&nbsp <!-- <button class="profite_tabel_btn btn btn-default btn_link btn-lg">アマゾン</button> --> </td>
+									<td class="text-center" style="background-color: #CBEBF6" id="amazon_realPrice">&nbsp</td>
+									
+									<td class="text-center point_details">&nbsp</td>
+									<td class="text-center">&nbsp</td>
+									<td class="text-center" style="background-color: #CBEBF6">&nbsp</td>
+									
+									<td class="text-center"><button class="btn btn-warning btn-lg">購入へ</button></td>
+								</tr>
+								<tr>
+									<td class="text-center" style="vertical-align: middle;">2位</td>
+									<td>&nbsp <!-- <button class="profite_tabel_btn btn btn-default btn_link btn-lg">アマゾン</button> --> </td>
+									<td class="text-center" style="background-color: #CBEBF6" id="amazon_realPrice">&nbsp</td>
+									
+									<td class="text-center point_details">&nbsp</td>
+									<td class="text-center">&nbsp</td>
+									<td class="text-center" style="background-color: #CBEBF6">&nbsp</td>
+									
+									<td class="text-center"><button class="btn btn-warning btn-lg">購入へ</button></td>
+								</tr>
+								<tr>
+									<td class="text-center" style="vertical-align: middle;">3位</td>
+									<td>&nbsp <!-- <button class="profite_tabel_btn btn btn-default btn_link btn-lg">アマゾン</button> --> </td>
+									<td class="text-center" style="background-color: #CBEBF6" id="amazon_realPrice">&nbsp</td>
+									
+									<td class="text-center point_details">&nbsp</td>
+									<td class="text-center">&nbsp</td>
+									<td class="text-center" style="background-color: #CBEBF6">&nbsp</td>
+									
+									<td class="text-center"><button class="btn btn-warning btn-lg">購入へ</button></td>
+								</tr>
+							<!-- <tr>
+								<th colspan="2" class="text-right" style="border-bottom-left-radius: 10px;">全体</th>
+								<td class="text-center" style="background-color: #CBEBF6">ー</td>
+								<td class="text-center">ー</td>
+								<td class="text-center">&nbsp</td>
+								<td class="text-center"  style="background-color: #CBEBF6">ー</td>
+								
+								<td class="text-center">ー</td>
+							</tr> -->
+						</tbody>
+					</table>
+					<div class="product_loading_image text-center" style="position: absolute;bottom:5px; width: 80%;">
+						<!-- <img style=" margin-top: -500px;" align="center" src="resource/img/ajax/loading.gif"> -->
+					</div>
+				</div>
+								
+			</div>
+			<!-- End Second Box -->
+			<div class="container compare_table_padding clearfix">
+				<div class="row">
+				       
+				    <div class="table-responsive" style="padding: 0px; border: 2px solid #00A0E8; position: relative;">
+				        <table class="table table-bordered compare_table_mobile" style="margin-bottom: 0px; background-color: white;">
+				        
+				        
+				        <thead>
+				            <tr>
+				                <th colspan="2"><span id="jan_product_name2"></span></th>
+				            </tr>
+
+				        </thead>
+				        <tbody class="mobile_compare_table d-block" id="mobile_compare_table" style="">
+				        	<tr>
+				        		<th nowrap class="align-middle text-center" style="border-left: 0; border-top:0; background-color: white">ショップ</th>
+				        		<th nowrap class="align-middle text-center" style="border-right: 0; border-top: 0; background-color: #CBEBF6;">実質価格</th>
+				        		<th nowrap class="align-middle text-center" style="border-right: 0; border-top: 0;background-color: white ">価格</th>
+				        		<th style="background-color: white " nowrap class="align-middle text-center">ショップP</th>
+				        		<th style=" background-color: #CBEBF6; " nowrap class="align-middle text-center">チャリン<sup>2</sup>P</th>
+				        		<th style="background-color: white" nowrap class="align-middle text-center">サイト</th>
+				        	</tr>
+				        	
+				        	<tr>
+				        		<td style="border-left: 0;">1 位</td>
+				        		<td style=" background-color: #CBEBF6;"></td>
+				        		<td></td>
+				        		<td></td>
+				        		<td style=" background-color: #CBEBF6;"></td>
+				        		<td style="border-right: 0;"></td>
+				        						        		
+							</tr>
+							<tr>
+				        		<td style="border-left: 0;">2 位</td>
+				        		<td style="background-color: #CBEBF6;"></td>
+				        		<td></td>
+				        		<td></td>
+				        		<td style="background-color: #CBEBF6;"></td>
+				        		<td style="border-right: 0;"></td>
+				        						        		
+							</tr>
+							<tr>
+				        		<td style="border-left: 0;">3 位</td>
+				        		<td style=" background-color: #CBEBF6;"></td>
+				        		<td></td>
+				        		<td></td>
+				        		<td style="background-color: #CBEBF6;"></td>
+				        		<td style="border-right: 0;"></td>				        						        		
+				        	</tr>
+				        	
+				            
+				        </tbody>
+				    </table>
+				     <div class="product_loading_image_mobile text-center" style="position: absolute;bottom:5px; width: 80%;">
+						<!-- <img style="" align="center" src="resource/img/ajax/loading.gif"> -->
+					</div>       
+				</div>
+			</div>
+			<!------ </.row-------->
+			</div>
+			<!------ </.container-------->
+			<div class="row second-box d-none" style="padding: 0;">
+				<!-- <div class="card " > -->
+					<div class="table-responsive" style="padding: 0px; border: 2px solid red;">
+						<table class="table" style="margin-bottom: 0; ">
+								<style type="text/css">
+									#lowest_ten_table td, #lowest_ten_table th{
+										border: 1px solid black;
+									}
+									/*table { border-collapse: separate; }*/
+									/*td { border: solid 1px #000; }
+									tr:first-child td:first-child { border-top-left-radius: 10px; }
+									tr:first-child td:last-child { border-top-right-radius: 10px; }
+									tr:last-child td:first-child { border-bottom-left-radius: 10px; }
+									tr:last-child td:last-child { border-bottom-right-radius: 10px; }*/
+								</style>
+							<thead class="lowest_ten_head">
+								<tr class="">
+									<th nowrap class="align-middle text-center" style="border-left: 0; border-top:0; background-color: white border-top-left-radius:20px;">ショップ</th>
+									<!-- <th nowrap colspan="2" class="align-middle text-center">販売店（ショップ名)</th> -->
+									
+									<th nowrap class="align-middle text-center" style="border-right: 0; border-top: 0; background-color: #CBEBF6;">実質価格</th>
+									<th nowrap class="align-middle text-center" style="border-right: 0; border-top: 0;background-color: white ">価格</th>
+									<th style="background-color: white " nowrap class="align-middle text-center">ショップP</th>
+									<th style=" background-color: #CBEBF6; " nowrap class="align-middle text-center">チャリン<sup>2</sup>P</th>
+									<th style="background-color: white border-top-right-radius:20px; " nowrap class="align-middle text-center">サイト</th>
+									
+								</tr>
+							</thead>
+							<tbody id="lowest_ten_table">
+								
+								<?php
+								for ($i=1; $i <11 ; $i++) { 
+									
+								?>
+								<tr>
+									<td style="border-left: 0; border-bottom: <?= ($i==10)?'0;':'' ?>"><?= $i; ?> 位</td>
+									<!-- <td style="border-bottom: <?= ($i==10)?'0;':'' ?>"></td> -->
+									<td style="border-bottom: <?= ($i==10)?'0;':'' ?>; background-color: #CBEBF6;"></td>
+									<td style="border-bottom: <?= ($i==10)?'0;':'' ?>"></td>
+									<td style="border-bottom: <?= ($i==10)?'0;':'' ?>"></td>
+									<td style="border-bottom: <?= ($i==10)?'0;':'' ?>; background-color: #CBEBF6;"></td>
+									<td style="border-right: 0; border-bottom: <?= ($i==10)?'0;':'' ?>"></td>
+									<?php
+									if ($i==1) {?>
+										<!-- <td  style="border-right: 0;" width="25%" rowspan="10" class="align-middle text-center"></td> -->
+									<?php
+									}
+									?>
+									
+								</tr>
+								<?php
+								}
+								?>
+							</tbody>
+						</table>
+					</div>
+				<!-- </div> -->
+				
+			</div>
+
+		
+		
+		
+		
+
+		
+	
+
+	<input type="hidden" class="point_table_view" id="point_table_view" value="0" name="">
+	<!-- <script type="text/javascript" src="resource/js/jquery.js"></script> -->
+	<input type="hidden" id="can_product_search" value="1">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="resource/bootstrap/dist/js/bootstrap.js?>"></script>
+	<script type="text/javascript" src="resource/js/qrcodelib.js"></script>
+	<!-- <script type="text/javascript" src="resource/js/webcodecamjquery.js"></script> -->
+	
+	<script type="text/javascript" src="resource/js/xml2json.js"></script>
+	
+    <script src="https://cdn.rawgit.com/serratus/quaggaJS/0420d5e0/dist/quagga.min.js?>"></script>
+
+    <style>
+    	#interactive.viewport {position: relative; width: 100%; height: auto; overflow: hidden; text-align: center;}
+    	#interactive.viewport > canvas, #interactive.viewport > video {max-width: 100%;width: 100%;}
+    	canvas.drawing, canvas.drawingBuffer {position: absolute; left: 0; top: 0;}
+    </style>
+    
+      <script type="text/javascript" src="resource/js/affiliate_v2.js?>"></script>
+      <script type="text/javascript" src="resource/js/voice_v2.js"></script>
+	  <script type="text/javascript" src="resource/pwa/app.js"></script>
+      
+      <!-- <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+      <script src="resource/js/app.js"></script> -->
+      <script type="text/javascript" src="resource/js/amazon_commission_rate.json"></script>
+      <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+	
+</body>
+</html>

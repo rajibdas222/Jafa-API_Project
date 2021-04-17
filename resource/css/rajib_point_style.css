@@ -1,0 +1,8 @@
+.jacos-input-bg {
+    background-color: #70ffaf !important;
+    border: none !important;
+}
+
+.form-control:focus{
+    box-shadow:none!important;
+}
